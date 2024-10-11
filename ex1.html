@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Meet</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="img/PNG" href="./assets/img/favicon.PNG">
+        <link rel="stylesheet" href="./assets/css/reset.css">
+        <link href="./assets/css/index.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <style>
+            /* Splash screen styles */
+            #splash {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 9999;
+            }
+            #splash img {
+                width: 100px; /* Adjust size as needed */
+            }
+        </style>
+    </head>
+    <body>
+
+         <!-- Splash screen -->
+         <div id="splash">
+            <img src="E:\Project_Sem4\picture.jpeg" alt="Logo">
+        </div>
+
+        <section>
+            <div class="navigation-wrapper f-400">
+                <div class="section-wrapper">
+                    <div class="navigation-bar flex">
+                        <div class="flex logo-wrapper">
+                            <div class="valign-center logo-container">
+                                <a href=""><img src="./assets/img/logo.PNG" alt="Google meet logo"></a>
+                            </div>
+                            <div class="valign-center logo-text"><a href="">Meet</a></div>
+                        </div>
+                        <div class="flex top-right-control">
+                            <div class="valign-center chrono-text nav-items" id="date-time">
+                                <!-- Real-time date and time will be displayed here -->
+                            </div>
+                            <div class="flex nav-items">
+                                <div title="Support" class="valign-center nav-links">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="#5f6368" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                </div>
+                                <div title="Feedback" class="valign-center nav-links">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="#5f6368" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                </div>
+                                <div title="Setting" class="valign-center nav-links setting-icon">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="#5f6368" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                                </div>
+                            </div>
+                            <div class="flex nav-items more-controls">
+                                <div class="valign-center nav-links more-app">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 34 24" fill="none" stroke="#5f6368" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle><circle cx="18" cy="12" r="1"></circle><circle cx="18" cy="5" r="1"></circle><circle cx="18" cy="19" r="1"></circle><circle cx="24" cy="12" r="1"></circle><circle cx="24" cy="5" r="1"></circle><circle cx="24" cy="19" r="1"></circle>
+                                    </svg>
+                                </div>
+                                <div class="valign-center nav-links avatar-container">
+                                    <div class="user-avatar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-wrapper">
+                <div class="page-action-container">
+                    <div class="left-container">
+                        <div class="left-side-text">
+                            <div class="heading-1 f-400">TRUCON</div>
+                            <div class="heading-1 f-400">Where Trust Meets Technology</div>
+                            <div class="heading-2 f-400">We re-engineered the service we built for secure business meetings, Google Meet, to make it free and available for all.</div>
+                            <div class="flex create-meeting-block">
+                                <div class="btn-container">
+                                    <button>
+                                        <div>
+                                            <span class="material-icons">video_call</span>
+                                        </div>
+                                        <div class="btn-text">
+                                            <span>New meeting</span>    
+                                        </div>
+                                    </button>
+                                </div>
+                                <div class="input-container">
+                                    <div class="flex input-flex">
+                                        <div class="flex input-wrapper">
+                                            <div class="input-icon">
+                                                <span class="material-icons">keyboard</span>
+                                            </div>
+                                            <div class="input-field">
+                                                <input class="f-400" type="text" placeholder="Enter a code or link" value="">
+                                            </div>
+                                        </div>
+                                        <div class="flex input-button">
+                                            <button class="btn">Join</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="learn-more">
+                                <a href=""><u>Learn more</u> about Google Meet</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-container">
+                        <div class="right-side-image">
+                            <div class="meet-image-wrapper">
+                                <img src="./assets/img/meet people.PNG" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <script>
+            // Function to display current date and time
+            function updateDateTime() {
+                const now = new Date();
+                const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+                const dateTimeString = now.toLocaleDateString('en-US', options);
+                document.getElementById('date-time').innerText = dateTimeString;
+            }
+
+            // Update date and time every second
+            setInterval(updateDateTime, 1000);
+
+            // Hide splash screen after loading
+            window.addEventListener('load', () => {
+                const splash = document.getElementById('splash');
+                splash.style.opacity = 0;
+                setTimeout(() => {
+                    splash.style.display = 'none';
+                }, 500); // Wait for fade-out transition
+            });
+        </script>
+    </body>
+</html>

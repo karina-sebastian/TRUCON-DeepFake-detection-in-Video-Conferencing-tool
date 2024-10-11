@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <title>Meet</title>
+    <link rel="icon" type="img/PNG" href="./assets/img/favicon.PNG">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    <style>
+        .mic-on {
+            animation: micAnimation 1s infinite;
+        }
+
+        @keyframes micAnimation {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+        video.on {
+            display: block;
+        }
+
+        .call-end {
+            color: red; /* Style for call end button */
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="control-bar-wrapper">
+            <div class="control-bar-container">
+                <div class="control-bar-time-container">
+                    <div class="control-bar-time f-400">
+                        <!-- Add time display here if needed -->
+                    </div>
+                </div>
+                <div class="control-bar-center-container">
+                    <div class="center-icon" id="micButton">
+                        <span class="material-icons-outlined" id="micIcon">
+                            mic_off
+                        </span>
+                    </div>
+                    <div class="center-icon" id="videoButton">
+                        <span class="material-icons-outlined" id="videoIcon">
+                            videocam_off
+                        </span>
+                    </div>
+                    
+                    <div class="center-icon" id="presentButton">
+                        <span class="material-icons-outlined">
+                            present_to_all
+                        </span>
+                    </div>
+                   
+                 
+                    <a href="./followUp.html" class="center-icon call-end" id="endCallButton">
+                        <span class="material-icons-outlined">
+                            call_end
+                        </span>
+                    </a>
+                </div>
+                <div class="control-bar-right-container">
+                    
+                    <div class="right-icon" id="peopleButton">
+                        <span class="material-icons-outlined">
+                            people_outline
+                        </span>
+                    </div>
+                    <div class="right-icon" id="chatButton">
+                        <span class="material-icons-outlined">
+                            chat
+                        </span>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="screen-wrapper">
+            <div class="screen-container">
+                <video id="videoElement" autoplay></video>
+                <!-- Content for the screen goes here -->
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const micButton = document.getElementById('micButton');
+        const micIcon = document.getElementById('micIcon');
+        const videoButton = document.getElementById('videoButton');
+        const videoIcon = document.getElementById('videoIcon');
+        const captionButton = document.getElementById('captionButton');
+        const captionIcon = document.getElementById('captionIcon');
+        const presentButton = document.getElementById('presentButton');
+        const infoButton = document.getElementById('infoButton');
+        const peopleButton = document.getElementById('peopleButton');
+        const chatButton = document.getElementById('chatButton');
+        const gestureButton = document.getElementById('gestureButton');
+        const privacyButton = document.getElementById('privacyButton');
+        const videoElement = document.getElementById('videoElement');
+        const endCallButton = document.getElementById('endCallButton');
+
+        let micOn = false;
+        let videoOn = false;
+        let captionOn = false;
+        let mediaStream = null;
+
+        micButton.addEventListener('click', () => {
+            micOn = !micOn;
+            micIcon.textContent = micOn ? 'mic' : 'mic_off';
+            micButton.classList.toggle('mic-on', micOn);
+
+            if (micOn) {
+                navigator.mediaDevices.getUserMedia({ audio: true })
+                    .then(stream => {
+                        mediaStream = stream;
+                        console.log('Microphone on');
+                    })
+                    .catch(err => console.error('Error accessing microphone:', err));
+            } else {
+                if (mediaStream) {
+                    mediaStream.getTracks().forEach(track => {
+                        if (track.kind === 'audio') track.stop();
+                    });
+                }
+                console.log('Microphone off');
+            }
+        });
+
+        videoButton.addEventListener('click', () => {
+            videoOn = !videoOn;
+            videoIcon.textContent = videoOn ? 'videocam' : 'videocam_off';
+
+            if (videoOn) {
+                navigator.mediaDevices.getUserMedia({ video: true })
+                    .then(stream => {
+                        mediaStream = stream;
+                        videoElement.srcObject = stream;
+                        videoElement.classList.add('on');
+                        console.log('Video on');
+                    })
+                    .catch(err => console.error('Error accessing video:', err));
+            } else {
+                if (mediaStream) {
+                    mediaStream.getTracks().forEach(track => {
+                        if (track.kind === 'video') track.stop();
+                    });
+                }
+                videoElement.classList.remove('on');
+                console.log('Video off');
+            }
+        });
+
+        captionButton.addEventListener('click', () => {
+            captionOn = !captionOn;
+            captionIcon.textContent = captionOn ? 'closed_caption' : 'closed_caption_off';
+            console.log(captionOn ? 'Captions on' : 'Captions off');
+        });
+
+        presentButton.addEventListener('click', () => {
+            navigator.mediaDevices.getDisplayMedia({ video: true })
+                .then(screenStream => {
+                    mediaStream = screenStream;
+                    videoElement.srcObject = screenStream;
+                    videoElement.classList.add('on');
+                    console.log('Presenting screen');
+                })
+                .catch(err => console.error('Error accessing screen:', err));
+        });
+
+        infoButton.addEventListener('click', () => {
+            console.log('Info button clicked');
+        });
+
+        peopleButton.addEventListener('click', () => {
+            console.log('People button clicked');
+        });
+
+        chatButton.addEventListener('click', () => {
+            console.log('Chat button clicked');
+        });
+
+        gestureButton.addEventListener('click', () => {
+            console.log('Gesture button clicked');
+        });
+
+        privacyButton.addEventListener('click', () => {
+            console.log('Privacy button clicked');
+        });
+
+        endCallButton.addEventListener('click', (event) => {
+            if (mediaStream) {
+                mediaStream.getTracks().forEach(track => track.stop());
+            }
+            console.log('Ending call and navigating to follow-up page');
+        });
+    </script>
+</body>
+</html>

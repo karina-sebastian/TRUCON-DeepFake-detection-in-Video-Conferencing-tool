@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Meet</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/followup.css">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+</head>
+<body background="C:\Users\Vasanth\Downloads\pexels-martinpechy-2078271.jpg" style="background-repeat: no-repeat;background-size: 100% 100%;">
+    <section>
+        <div class="section-wrapper">
+            <header >
+                <div class="nav-wrapper">
+                    <div class="logo-wrapper">
+                        <div class="logo-img-container" >
+                            <img src="44.png" alt="Logo" style="width: 200px;height: 100px; ">
+                        </div>
+                        <div class="logo-text f-400"></div>
+                    </div>
+                    <div class="user-info">
+                        <div class="f-400 user-content">
+                            <div class="email-text">angledark013@gmail.com</div>
+                            <div class="switch-acc-text">Switch account</div>
+                        </div>
+                        <div class="user-avatar-wrapper">
+                            <div class="user-avatar"></div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-wrapper">
+            <div class="action-container">
+                <div class="video-wrapper">
+                    <div class="video-container" id="videoContainer"></div>
+                    <div class="av-wrapper">
+                        <div class="av-buttons">
+                            <div class="a-button" id="micButton">
+                                <span class="material-icons-outlined" id="micIcon">
+                                    mic_off
+                                </span>
+                            </div>
+                            <div class="v-button" id="videoButton">
+                                <span class="material-icons-outlined" id="videoIcon">
+                                    videocam_off
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chng-bg-wrapper">
+                        <div class="chng-bg-container">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#fff">
+                                <g transform="translate(3 3)">
+                                    <path d="M6.65 0L0 6.65V4.53L4.53 0H6.65ZM0 0V1.74L1.74 0H0ZM13.17 3.42L16.59 0H14.47L12.05 2.42C12.46 2.7 12.84 3.04 13.17 3.42ZM4.42 10.04L2.5 11.97C3.38 11.56 4.28 11.22 5.21 10.98C4.91 10.7 4.65 10.38 4.42 10.04ZM14.5 7.04L18 3.54V1.41L14.2 5.21C14.39 5.77 14.5 6.37 14.5 6.99C14.5 7.01 14.5 7.02 14.5 7.04ZM10.04 1.6L11.64 0H9.52L7.9 1.61C8.26 1.54 8.62 1.5 9 1.5C9.35 1.5 9.7 1.54 10.04 1.6ZM3.61 5.9L0 9.51V11.63L3.6 8.03C3.54 7.7 3.5 7.35 3.5 7C3.5 6.62 3.54 6.26 3.61 5.9ZM17.73 13.7L18 13.44V11.32L16.7 12.62C17.11 12.92 17.45 13.29 17.73 13.7ZM18 8.49V6.36L13.24 11.12C13.77 11.27 14.3 11.45 14.82 11.66L18 8.49ZM5 7C5 4.79 6.79 3 9 3C11.21 3 13 4.79 13 7C13 9.21 11.21 11 9 11C6.79 11 5 9.21 5 7ZM7 7C7 8.1 7.9 9 9 9C10.1 9 11 8.1 11 7C11 5.9 10.1 5 9 5C7.9 5 7 5.9 7 7ZM17 16.22V18H1V16.22C1 15.1 1.61 14.07 2.61 13.56C4.29 12.7 6.47 12 9 12C11.53 12 13.71 12.7 15.39 13.56C16.39 14.07 17 15.1 17 16.22ZM14.98 16C14.92 15.71 14.74 15.47 14.48 15.34C13.29 14.73 11.37 14 9 14C6.63 14 4.71 14.73 3.52 15.34C3.26 15.47 3.08 15.72 3.02 16H14.98Z"></path>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                   
+                    <div class="cam-status-wrapper">
+                        <div class="cam-status-container f-600" id="camStatus">
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <div class="btn-wrapper">
+                        <div class="f-400 ready-text" style="font-family: Fantasy">Ready To Join</div>
+                        <div class="btn-container">
+                            <div class="btn-ask">
+                                <a href="./meetingDashboard.html"><button class="btn-53">
+                                    <div class="original">JOIN</div>
+                                    <div class="letters">
+                                      
+                                      <span>J</span>
+                                      <span>O</span>
+                                      <span>I</span>
+                                      <span>N</span>
+                                        </div>
+                                  </button>
+                                  
+                            </div>
+                                     <div class="btn-present">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <script>
+        const micButton = document.getElementById('micButton');
+        const micIcon = document.getElementById('micIcon');
+        const videoButton = document.getElementById('videoButton');
+        const videoIcon = document.getElementById('videoIcon');
+        const camStatus = document.getElementById('camStatus');
+        const videoContainer = document.getElementById('videoContainer');
+
+        let micOn = false;
+        let videoOn = false;
+        let mediaStream = null;
+
+        micButton.addEventListener('click', () => {
+            micOn = !micOn;
+            micIcon.textContent = micOn ? 'mic' : 'mic_off';
+            if (micOn) {
+                enableAudio();
+            } else {
+                disableAudio();
+            }
+        });
+
+        videoButton.addEventListener('click', () => {
+            videoOn = !videoOn;
+            videoIcon.textContent = videoOn ? 'videocam' : 'videocam_off';
+            camStatus.textContent = videoOn ? 'Camera is on' : 'Camera is off';
+            if (videoOn) {
+                enableVideo();
+            } else {
+                disableVideo();
+            }
+        });
+
+        function enableAudio() {
+            navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(stream => {
+                    mediaStream = stream;
+                })
+                .catch(error => {
+                    console.error('Error accessing microphone:', error);
+                });
+        }
+
+        function disableAudio() {
+            if (mediaStream) {
+                const audioTracks = mediaStream.getAudioTracks();
+                audioTracks.forEach(track => track.stop());
+                mediaStream = null;
+            }
+        }
+
+        function enableVideo() {
+            const constraints = { video: true };
+            navigator.mediaDevices.getUserMedia(constraints)
+                .then(stream => {
+                    mediaStream = stream;
+                    const videoElement = document.createElement('video');
+                    videoElement.srcObject = stream;
+                    videoElement.autoplay = true;
+                    videoElement.width = 300;
+                    videoElement.height = 300;
+                    videoContainer.innerHTML = '';
+                    videoContainer.appendChild(videoElement);
+                })
+                .catch(error => {
+                    console.error('Error accessing camera:', error);
+                });
+        }
+
+        function disableVideo() {
+            if (mediaStream) {
+                const videoTracks = mediaStream.getVideoTracks();
+                videoTracks.forEach(track => track.stop());
+                videoContainer.innerHTML = '';
+                mediaStream = null;
+            }
+        }
+
+        
+    // Existing script...
+    const backButton = document.getElementById('backButton');
+
+    backButton.addEventListener('click', () => {
+        window.location.href = 'index.html';
+    });
+
+
+    </script>
+</body>
+</html>
